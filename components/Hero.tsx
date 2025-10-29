@@ -1,6 +1,13 @@
 "use client";
 
-import { Box, Container, Typography, Button, Stack } from "@mui/material";
+import React from "react";
+import {
+  Box,
+  Typography,
+  Button,
+  Stack,
+  Container,
+} from "@mui/material";
 import Image from "next/image";
 import heroImage from "../public/hero.png";
 
@@ -59,7 +66,7 @@ const Hero = () => {
             fontFamily: "Merriweather, serif",
           }}
         >
-          Your U.S based FAA MailBox. Securely store, or forward your documents worldwide.
+          Your U.S.-based FAA Mailbox. Securely store or forward your documents worldwide.
         </Typography>
 
         <Typography
