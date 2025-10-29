@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import { Box, Typography, Link, IconButton, Grid } from "@mui/material";
+import { Box, Typography, Link, IconButton } from "@mui/material";
+import Grid from "@mui/material/Grid2"; // ✅ NEW import for v6
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -15,18 +16,13 @@ const Footer: React.FC = () => {
         px: { xs: 3, md: 10 },
       }}
     >
-      <Grid
-        container
-        spacing={4}
-        justifyContent="space-between"
-        alignItems="flex-start"
-      >
+      <Grid container spacing={4} justifyContent="space-between" alignItems="flex-start">
         {/* Left Section - Logo + Address */}
-        <Grid item xs={12} md={4}>
+        <Grid xs={12} md={4}>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             <Box
               component="img"
-              src="/USAS logo White.png" // replace with your logo path
+              src="/USAS logo White.png"
               alt="USASFAA Logo"
               sx={{ width: 90, mb: 1 }}
             />
@@ -39,36 +35,24 @@ const Footer: React.FC = () => {
         </Grid>
 
         {/* Middle Section - Navigation Links */}
-        <Grid item xs={6} md={2}>
+        <Grid xs={6} md={2}>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-            <Link href="#" color="inherit" underline="none">
-              Home
-            </Link>
-            <Link href="#" color="inherit" underline="none">
-              About Us
-            </Link>
-            <Link href="#" color="inherit" underline="none">
-              FAQ
-            </Link>
+            <Link href="#" color="inherit" underline="none">Home</Link>
+            <Link href="#" color="inherit" underline="none">About Us</Link>
+            <Link href="#" color="inherit" underline="none">FAQ</Link>
           </Box>
         </Grid>
 
-        <Grid item xs={6} md={2}>
+        <Grid xs={6} md={2}>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
-            <Link href="#" color="inherit" underline="none">
-              Blogs
-            </Link>
-            <Link href="#" color="inherit" underline="none">
-              Contact Us
-            </Link>
-            <Link href="#" color="inherit" underline="none">
-              Privacy Policy
-            </Link>
+            <Link href="#" color="inherit" underline="none">Blogs</Link>
+            <Link href="#" color="inherit" underline="none">Contact Us</Link>
+            <Link href="#" color="inherit" underline="none">Privacy Policy</Link>
           </Box>
         </Grid>
 
         {/* Right Section - Social Media */}
-        <Grid item xs={12} md={3}>
+        <Grid xs={12} md={3}>
           <Typography
             variant="body2"
             sx={{ fontWeight: 600, mb: 1, textAlign: { xs: "left", md: "right" } }}
@@ -82,22 +66,13 @@ const Footer: React.FC = () => {
               gap: 1.5,
             }}
           >
-            <IconButton
-              href="#"
-              sx={{ color: "#fff", "&:hover": { color: "#e3f2fd" } }}
-            >
+            <IconButton href="#" sx={{ color: "#fff", "&:hover": { color: "#e3f2fd" } }}>
               <FacebookIcon fontSize="small" />
             </IconButton>
-            <IconButton
-              href="#"
-              sx={{ color: "#fff", "&:hover": { color: "#e3f2fd" } }}
-            >
+            <IconButton href="#" sx={{ color: "#fff", "&:hover": { color: "#e3f2fd" } }}>
               <LinkedInIcon fontSize="small" />
             </IconButton>
-            <IconButton
-              href="#"
-              sx={{ color: "#fff", "&:hover": { color: "#e3f2fd" } }}
-            >
+            <IconButton href="#" sx={{ color: "#fff", "&:hover": { color: "#e3f2fd" } }}>
               <InstagramIcon fontSize="small" />
             </IconButton>
           </Box>
