@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Box, Typography, Button, Stack, Container } from "@mui/material";
+import Grid from "@mui/material/Grid";
 import Image from "next/image";
 import heroImage from "../public/hero.png";
 
