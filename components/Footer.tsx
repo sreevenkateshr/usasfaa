@@ -1,8 +1,7 @@
 "use client";
 
 import React from "react";
-import { Box, Typography, Link, IconButton } from "@mui/material";
-import Grid from "@mui/material/Unstable_Grid2";
+import { Box, Typography, Link, IconButton, Grid } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
@@ -19,7 +18,7 @@ const Footer: React.FC = () => {
     >
       <Grid container spacing={4} justifyContent="space-between" alignItems="flex-start">
         {/* Left Section - Logo + Address */}
-        <Grid xs={12} md={4}>
+        <Grid size={{ xs: 12, md: 4 }}>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             <Box
               component="img"
@@ -36,7 +35,7 @@ const Footer: React.FC = () => {
         </Grid>
 
         {/* Middle Section - Navigation Links */}
-        <Grid xs={6} md={2}>
+        <Grid size={{ xs: 6, md: 2 }}>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
             <Link href="#" color="inherit" underline="none">Home</Link>
             <Link href="#" color="inherit" underline="none">About Us</Link>
@@ -44,7 +43,7 @@ const Footer: React.FC = () => {
           </Box>
         </Grid>
 
-        <Grid xs={6} md={2}>
+        <Grid size={{ xs: 6, md: 2 }}>
           <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
             <Link href="#" color="inherit" underline="none">Blogs</Link>
             <Link href="#" color="inherit" underline="none">Contact Us</Link>
@@ -53,7 +52,7 @@ const Footer: React.FC = () => {
         </Grid>
 
         {/* Right Section - Social Media */}
-        <Grid xs={12} md={3}>
+        <Grid size={{ xs: 12, md: 3 }}>
           <Typography
             variant="body2"
             sx={{ fontWeight: 600, mb: 1, textAlign: { xs: "left", md: "right" } }}
