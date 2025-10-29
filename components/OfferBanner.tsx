@@ -3,7 +3,6 @@
 import { Box, Button, Card, CardContent, Container, Typography } from "@mui/material";
 import { CheckCircle } from "@mui/icons-material";
 import { memo } from "react";
-import { Grid } from "@mui/material";
 
 const OfferBanner = memo(() => {
   return (
@@ -24,7 +23,7 @@ const OfferBanner = memo(() => {
           fontFamily: "'Merriweather', serif",
         }}
       >
-        Don’t Miss Out – Get your Annual Subscription for only $69!
+        Don't Miss Out - Get your Annual Subscription for only $69!
       </Typography>
 
       <Typography
@@ -32,9 +31,7 @@ const OfferBanner = memo(() => {
         color="text.secondary"
         sx={{ mb: 5, maxWidth: "700px", mx: "auto" }}
       >
-        Subscribe before April 2025 for just $69 per year—absolutely no hidden fees. 
-        With one simple payment, you’ll achieve full FAA compliance, secure your digital mailbox, 
-        and enjoy effortless mail management. Don’t miss out on the ultimate value!
+        Subscribe before April 2025 for just $99 per year-absolutely no hidden fees. With one simple payment, you'll achieve full FAA compliance, secure your digital mailbox, and enjoy effortless mail management. Don't miss out on the ultimate value!
       </Typography>
 
       {/* Offer Card */}
@@ -46,6 +43,7 @@ const OfferBanner = memo(() => {
           borderRadius: "20px",
           overflow: "hidden",
           textAlign: "left",
+          position: "relative",
         }}
       >
         {/* Blue corner */}
@@ -61,7 +59,7 @@ const OfferBanner = memo(() => {
           }}
         />
 
-        <CardContent sx={{ p: 4 }}>
+        <CardContent sx={{ p: 4, position: "relative" }}>
           <Typography
             variant="subtitle2"
             color="text.secondary"
@@ -85,25 +83,23 @@ const OfferBanner = memo(() => {
             Includes
           </Typography>
 
-          {/* List */}
-          <Box
-            sx={{
-              display: "grid",
-              gridTemplateColumns: "repeat(2, 1fr)",
-              rowGap: 1.5,
-              mb: 3,
-            }}
-          >
+          {/* List - Single column layout */}
+          <Box sx={{ mb: 3 }}>
             {[
               "Secure digital document storage",
+              "FAA compliance tracking", 
               "Real-time mail notifications",
-              "Worldwide document forwarding",
-              "FAA compliance tracking",
               "24/7 customer support",
+              "Worldwide document forwarding",
             ].map((item) => (
               <Box
                 key={item}
-                sx={{ display: "flex", alignItems: "center", gap: 1 }}
+                sx={{ 
+                  display: "flex", 
+                  alignItems: "center", 
+                  gap: 1,
+                  mb: 1.5
+                }}
               >
                 <CheckCircle fontSize="small" color="success" />
                 <Typography variant="body2">{item}</Typography>
@@ -119,6 +115,7 @@ const OfferBanner = memo(() => {
               py: 1.2,
               fontWeight: 600,
               textTransform: "none",
+              fontSize: "1rem",
             }}
           >
             Subscribe Now
