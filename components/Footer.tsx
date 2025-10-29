@@ -62,7 +62,7 @@ const Footer: React.FC = () => {
               Contact Us
             </Link>
             <Link href="#" color="inherit" underline="none">
-              Privacy policy
+              Privacy Policy
             </Link>
           </Box>
         </Grid>
