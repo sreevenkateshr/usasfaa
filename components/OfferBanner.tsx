@@ -3,6 +3,7 @@
 import { Box, Button, Card, CardContent, Container, Typography } from "@mui/material";
 import { CheckCircle } from "@mui/icons-material";
 import { memo } from "react";
+import { Grid } from "@mui/material";
 
 const OfferBanner = memo(() => {
   return (
