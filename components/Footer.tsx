@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Box, Typography, Link, IconButton } from "@mui/material";
-import { Grid } from "@mui/material";
+import Grid from "@mui/material/Unstable_Grid2";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
