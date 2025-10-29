@@ -1,10 +1,11 @@
 "use client";
 import React from "react";
 import { Box, Typography, Link, IconButton } from "@mui/material";
-import Grid from "@mui/material/Grid2"; // ✅ NEW import for v6
+import Grid from "@mui/material/Grid2"; // ✅ Correct for MUI v6
 import FacebookIcon from "@mui/icons-material/Facebook";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import InstagramIcon from "@mui/icons-material/Instagram";
+
 
 const Footer: React.FC = () => {
   return (
@@ -22,7 +23,7 @@ const Footer: React.FC = () => {
           <Box sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
             <Box
               component="img"
-              src="/USAS logo White.png"
+              src="/White.png"
               alt="USASFAA Logo"
               sx={{ width: 90, mb: 1 }}
             />
