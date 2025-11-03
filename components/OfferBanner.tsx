@@ -1,130 +1,161 @@
-"use client";
+'use client'
 
-import { Box, Button, Card, CardContent, Container, Typography } from "@mui/material";
-import { CheckCircle } from "@mui/icons-material";
-import { memo } from "react";
+import React from "react";
+import {
+  Box,
+  Typography,
+  Button,
+  Grid,
+  List,
+  ListItem,
+} from "@mui/material";
+import CheckIcon from "@mui/icons-material/Check";
 
-const OfferBanner = memo(() => {
+export default function SubscriptionCard() {
+  const leftColumn = [
+    "Secure digital document storage",
+    "Real-time mail notifications",
+    "Worldwide document forwarding",
+  ];
+  const rightColumn = [
+    "FAA compliance tracking",
+    "24/7 customer support",
+  ];
+
   return (
-    <Container
-      maxWidth="md"
+    <Box
       sx={{
-        py: { xs: 6, md: 10 },
-        textAlign: "center",
-        fontFamily: "'Merriweather', serif",
+        backgroundColor: "#f5f5f5",
+        borderRadius: "12px",
+        boxShadow: "0 4px 12px rgba(0,0,0,0.08)",
+        maxWidth: 600,
+        mx: "auto",
+        my: 8,
+        p: 4,
+        position: "relative",
+        overflow: "hidden",
+        fontFamily: '"Inter", Arial, sans-serif',
       }}
     >
-      {/* Headings */}
-      <Typography
-        variant="h4"
+      {/* --- Top-right corner lines --- */}
+      <Box
         sx={{
-          fontWeight: 700,
-          mb: 2,
-          fontFamily: "'Merriweather', serif",
-        }}
-      >
-        Don't Miss Out - Get your Annual Subscription for only $69!
-      </Typography>
-
-      <Typography
-        variant="body1"
-        color="text.secondary"
-        sx={{ mb: 5, maxWidth: "700px", mx: "auto" }}
-      >
-        Subscribe before April 2025 for just $99 per year-absolutely no hidden fees. With one simple payment, you'll achieve full FAA compliance, secure your digital mailbox, and enjoy effortless mail management. Don't miss out on the ultimate value!
-      </Typography>
-
-      {/* Offer Card */}
-      <Card
-        elevation={3}
-        sx={{
-          maxWidth: 380,
-          mx: "auto",
-          borderRadius: "20px",
+          position: "absolute",
+          top: 0,
+          right: 0,
+          width: "90px",
+          height: "90px",
           overflow: "hidden",
-          textAlign: "left",
-          position: "relative",
         }}
       >
-        {/* Blue corner */}
         <Box
           sx={{
-            width: 0,
-            height: 0,
-            borderLeft: "80px solid transparent",
-            borderBottom: "80px solid #1976d2",
             position: "absolute",
-            top: 0,
-            right: 0,
+            backgroundColor: "#0d6efd",
+            height: "26px",
+            width: "80px",
+            top: "7px",
+            right: "-35px",
+            transform: "rotate(45deg)",
+            borderRadius: "2px",
           }}
         />
+        <Box
+          sx={{
+            position: "absolute",
+            backgroundColor: "#0d6efd",
+            height: "4px",
+            width: "120px",
+            top: "42px",
+            right: "-40px",
+            transform: "rotate(45deg)",
+            borderRadius: "2px",
+          }}
+        />
+      </Box>
 
-        <CardContent sx={{ p: 4, position: "relative" }}>
-          <Typography
-            variant="subtitle2"
-            color="text.secondary"
-            sx={{ mb: 1 }}
-          >
-            Annual Subscription plan
-          </Typography>
+      {/* --- Card Content --- */}
+      <Typography variant="h6" fontWeight={600} mb={1}>
+        Annual Subscription plan
+      </Typography>
 
-          <Typography
-            variant="h3"
-            sx={{
-              fontWeight: 700,
-              mb: 3,
-              fontFamily: "'Merriweather', serif",
-            }}
-          >
-            $69!
-          </Typography>
+      <Typography
+        variant="h3"
+        fontWeight={800}
+        mb={3}
+        sx={{ color: "#000" }}
+      >
+        $69!
+      </Typography>
 
-          <Typography variant="subtitle1" fontWeight={600} mb={1}>
-            Includes
-          </Typography>
+      <Typography
+        variant="subtitle1"
+        fontWeight={600}
+        mb={2}
+        sx={{ color: "#000" }}
+      >
+        Includes
+      </Typography>
 
-          {/* List - Single column layout */}
-          <Box sx={{ mb: 3 }}>
-            {[
-              "Secure digital document storage",
-              "FAA compliance tracking", 
-              "Real-time mail notifications",
-              "24/7 customer support",
-              "Worldwide document forwarding",
-            ].map((item) => (
-              <Box
-                key={item}
-                sx={{ 
-                  display: "flex", 
-                  alignItems: "center", 
-                  gap: 1,
-                  mb: 1.5
+      {/* --- Features 2 Columns --- */}
+      <Grid container spacing={2} mb={4}>
+        <Grid item xs={12} sm={6}>
+          <List sx={{ p: 0 }}>
+            {leftColumn.map((item, index) => (
+              <ListItem
+                key={index}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  py: 0.5,
+                  px: 0,
+                  color: "#333",
+                  fontSize: "16px",
                 }}
               >
-                <CheckCircle fontSize="small" color="success" />
-                <Typography variant="body2">{item}</Typography>
-              </Box>
+                <CheckIcon sx={{ color: "#2ecc71", fontSize: 20, mr: 1 }} />
+                {item}
+              </ListItem>
             ))}
-          </Box>
+          </List>
+        </Grid>
+        <Grid item xs={12} sm={6}>
+          <List sx={{ p: 0 }}>
+            {rightColumn.map((item, index) => (
+              <ListItem
+                key={index}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  py: 0.5,
+                  px: 0,
+                  color: "#333",
+                  fontSize: "16px",
+                }}
+              >
+                <CheckIcon sx={{ color: "#2ecc71", fontSize: 20, mr: 1 }} />
+                {item}
+              </ListItem>
+            ))}
+          </List>
+        </Grid>
+      </Grid>
 
-          <Button
-            fullWidth
-            variant="contained"
-            sx={{
-              borderRadius: "50px",
-              py: 1.2,
-              fontWeight: 600,
-              textTransform: "none",
-              fontSize: "1rem",
-            }}
-          >
-            Subscribe Now
-          </Button>
-        </CardContent>
-      </Card>
-    </Container>
+      <Button
+        variant="contained"
+        fullWidth
+        sx={{
+          backgroundColor: "#0d6efd",
+          borderRadius: "50px",
+          py: 1.5,
+          textTransform: "none",
+          fontWeight: 500,
+          fontSize: "16px",
+          "&:hover": { backgroundColor: "#0b5ed7" },
+        }}
+      >
+        Subscribe Now
+      </Button>
+    </Box>
   );
-});
-
-OfferBanner.displayName = "OfferBanner";
-export default OfferBanner;
+}
